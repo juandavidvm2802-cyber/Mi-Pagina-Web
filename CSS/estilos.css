@@ -2,7 +2,8 @@
    morado principal : #8b5cf6
    morado oscuro    : #6d3fd1
    lila claro       : #c4a7ff
-   fondo lila suave : #f5f0ff
+   fondo lila suave : #f1eaff
+   fondo lila fuerte: #ddcdff
    rosado acento    : #f472b6
    texto oscuro     : #1e1530
 */
@@ -14,6 +15,7 @@
 
   body{
 font-family: 'roboto', sans-serif;
+background: #f1eaff;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -40,7 +42,7 @@ display: block;
 nav {
   width: 100%;
   background: #fff;
-  border-bottom: 1px solid transparent;
+  border-bottom: 3px solid #c4a7ff;
   box-shadow: 1px 1px 10px rgba(139,92,246,.25);
   position: fixed;
   top: 0;
@@ -79,19 +81,41 @@ nav {
 }
 
 
+/* hamburguesa (las 3 rayitas son spans, no necesita Font Awesome) */
 .hamburger {
- width: 30px;
- height: 30px;
- display: none;
- text-align: center;
- z-index: 100;
- cursor: pointer;
- transition: 0.5s ease-in-out;
+  width: 40px;
+  height: 40px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  z-index: 101;
+  cursor: pointer;
 }
 
-.hamburger>i {
-  font-size: 25px;
-  line-height: 80px;
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #8b5cf6;
+  border-radius: 3px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* cuando esta abierto se vuelve una X */
+.hamburger.activo span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.activo span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.activo span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 .contenido-header {
@@ -133,7 +157,7 @@ box-shadow: 0px 8px 32px rgba(139,92,246,.46);
 /*ABOUT US*/
 
 .about-us {
-  background: #f5f0ff;
+  background: #ddcdff;
 }
 
 .contenedor-servicio{
@@ -152,11 +176,13 @@ box-shadow: 0px 8px 32px rgba(139,92,246,.46);
   border-radius: 10px;
   padding: 45px 30px 60px 70px;
   transition: 0.5s;
+  border: 1px solid #c4a7ff;
+  box-shadow: 0px 4px 14px rgba(109,63,209,.18);
 
 }
 
 .servicio:hover{
- box-shadow: 0px 4px 10px rgba(139,92,246,.3);
+ box-shadow: 0px 8px 22px rgba(109,63,209,.35);
 }
 
 .servicio>i {
@@ -237,7 +263,7 @@ box-shadow: 0px 8px 32px rgba(139,92,246,.46);
 
 
 .resultados {
-  background: #f5f0ff;
+  background: #ddcdff;
   padding-top: 30px;
 }
 
@@ -255,8 +281,10 @@ box-shadow: 0px 8px 32px rgba(139,92,246,.46);
 
 .numbers .number {
   width: 45%;
-  background: rgba(255, 255, 255, 0.8);
+  background: #fff;
   color: #fff;
+  border: 1px solid #c4a7ff;
+  box-shadow: 0px 4px 14px rgba(109,63,209,.18);
   border-radius: 10px;
   padding: 40px 35px;
   margin-bottom: 20px;
@@ -530,7 +558,7 @@ img {
   }
 
   .hamburger {
-    display: block;
+    display: flex;
   }
 
   /* los links se esconden y salen cuando le dan al hamburger */
