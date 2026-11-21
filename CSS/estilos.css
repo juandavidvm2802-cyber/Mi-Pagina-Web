@@ -1,0 +1,619 @@
+/* ===== PALETA (para cambiar colores rapido, solo toque estos) =====
+   morado principal : #8b5cf6
+   morado oscuro    : #6d3fd1
+   lila claro       : #c4a7ff
+   fondo lila suave : #f1eaff
+   fondo lila fuerte: #ddcdff
+   rosado acento    : #f472b6
+   texto oscuro     : #1e1530
+*/
+
+*{margin: 0; 
+  padding: 0;
+   box-sizing: border-box;
+  }
+
+  body{
+font-family: 'roboto', sans-serif;
+background: #f1eaff;
+}
+
+h1, h2, h3, h4, h5, h6{
+  color: #1e1530;
+  font-weight: 300;
+}
+  
+.contenedor1 {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+
+/*header*/
+header::before {
+  content: "";
+display: block;
+ margin-bottom: 80px;
+}
+
+nav {
+  width: 100%;
+  background: #fff;
+  border-bottom: 3px solid #c4a7ff;
+  box-shadow: 1px 1px 10px rgba(139,92,246,.25);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  transition: ease-in-out 0.5s;
+}
+
+.nav {
+  display:flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.nav .logo {
+  height: 80px;
+}
+
+.nav .logo img {
+  height: 100%;
+  vertical-align: top;
+}
+
+
+.enlaces-header a {
+  font-weight: 300;
+  transition: ease-in-out 0.5s;
+}
+
+.nav .enlaces-header a {
+  color: #6d3fd1;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+
+/* hamburguesa (las 3 rayitas son spans, no necesita Font Awesome) */
+.hamburger {
+  width: 40px;
+  height: 40px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  z-index: 101;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #8b5cf6;
+  border-radius: 3px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* cuando esta abierto se vuelve una X */
+.hamburger.activo span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.activo span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.activo span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.contenido-header {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes animat{
+  0%{transform: scale(0);} 100%{transform: scale(1);}
+}
+
+.texto-header {
+  margin: 0 0 0 30px;
+}
+
+.contenido-header a {
+margin: 28px 0 0 0;
+width: 130px;
+display: inline-block;
+background: #8b5cf6;
+text-align: center;
+color : #fff;
+padding: 12px 0;
+text-decoration: none;
+font-weight: 400;
+text-transform: uppercase;
+font-size: 14px;
+border-radius: 5px;
+box-shadow: 0px 8px 32px rgba(139,92,246,.46);
+}
+
+.titulo {
+  font-size: 50px;
+}
+
+/*ABOUT US*/
+
+.about-us {
+  background: #ddcdff;
+}
+
+.contenedor-servicio{
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: 60px;
+  justify-content: space-around;
+
+}
+
+.servicio{
+  width: 29%;
+  background: #fff;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 45px 30px 60px 70px;
+  transition: 0.5s;
+  border: 1px solid #c4a7ff;
+  box-shadow: 0px 4px 14px rgba(109,63,209,.18);
+
+}
+
+.servicio:hover{
+ box-shadow: 0px 8px 22px rgba(109,63,209,.35);
+}
+
+.servicio>i {
+  font-size: 30px;
+  color: #fff;
+  background: #8b5cf6;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  padding-top: 20px;
+  border-radius: 50%;
+  box-shadow: 0px 8px 32px rgba(139,92,246,.46);
+}
+
+.servicio>h3 {
+  font-size: 24px;
+  margin: 30px 0;
+}
+
+.servicio>p {
+  font-weight: 100;
+  color: #1e1530;
+  margin-top: 15px;
+  padding-bottom: 20px;
+}
+
+.servicio>a {
+ color: #8b5cf6;
+ font-weight: 400;
+ text-decoration: none;
+}
+
+.servicio>a:hover {
+  color: #f472b6;
+  transition: color .5s;
+}
+
+
+/*preguntas*/
+
+.pregunta {
+  height: 600px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.pregunta>img{
+  width: 550px;
+
+}
+
+.texto-pregunta {
+  margin: 0 0 0 30px;
+}
+
+
+.texto-pregunta a {
+  margin: 28px 0 0 0;
+  width: 130px;
+  display: inline-block;
+  background: #8b5cf6;
+  text-align: center;
+  color : #fff;
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 32px rgba(139,92,246,.46);
+
+}
+
+/*resultados*/
+
+
+.resultados {
+  background: #ddcdff;
+  padding-top: 30px;
+}
+
+.content-resultados {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numbers {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.numbers .number {
+  width: 45%;
+  background: #fff;
+  color: #fff;
+  border: 1px solid #c4a7ff;
+  box-shadow: 0px 4px 14px rgba(109,63,209,.18);
+  border-radius: 10px;
+  padding: 40px 35px;
+  margin-bottom: 20px;
+}
+
+.numbers .number h4 {
+ color:#8b5cf6;
+ font-size: 50px;
+font-weight: 500;
+margin-bottom: 20px;
+
+}
+
+.numbers .number p {
+ color: #1e1530;
+ font-weight: 300;
+}
+
+.results-text {
+  width: 37%;
+
+}
+
+.results-text h4 {
+  color: #1e1530;
+  font-size: 40px;
+
+}
+
+.results-text p {
+  color: #1e1530;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+.results-text>a {
+ color: #8b5cf6;
+ text-decoration: none;
+ display: inline-block;
+ border: 1px solid #8b5cf6;
+ padding: 20px 0;
+ width: 120px;
+ text-align: center;
+ border-radius: 5px;
+}
+
+.box-skills h4{
+  font-size: 24px;
+  color: #fff;
+  background: #8b5cf6;
+  width: 300px;
+  border-radius: 6px;
+  padding: 10px 0 10px 15px;
+  margin-bottom: 10px;
+}
+
+.box-skills i {
+  color: #8b5cf6;
+  font-size: 20px;
+}
+
+
+/*footer*/
+
+footer {
+  background: #6d3fd1;
+  padding: 60px 0;
+  overflow :hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+
+}
+
+.partfooter {
+  width: 20%;
+  text-align: center;
+}
+
+.partfooter h4 {
+  color: #fff;
+  font-size: 20px;
+ font-weight: 400;
+  margin-bottom: 30px;
+}
+
+
+.partfooter a{
+  display: block;
+  text-decoration: none;
+  color: #e9defe;
+  font-weight: 300;
+  transition: color .3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.partfooter a:hover{
+  color: #f9a8d4;
+}
+
+.partfooter img{
+  width: 70%;
+}
+
+.social-media i{
+  font-size: 20px;
+  display: inline-block;
+  color: #fff;
+  border: 1px solid #c4a7ff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  line-height: 36px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  transition: all ease-in-out .3s;
+  margin-right: 5px;
+}
+
+.social-media i:hover{
+  color:#6d3fd1;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+
+
+/* ===== transiciones (la animación "animat" ya existía pero nunca se usaba) ===== */
+
+.contenido-header {
+  animation: animat 0.8s ease-out;
+}
+
+.nav .enlaces-header a:hover {
+  color: #f472b6;
+}
+
+.contenido-header a,
+.texto-pregunta a,
+.results-text > a {
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+
+.contenido-header a:hover,
+.texto-pregunta a:hover {
+  transform: translateY(-4px);
+  background: #6d3fd1;
+}
+
+.servicio:hover {
+  transform: translateY(-8px);
+}
+
+.servicio > i {
+  transition: transform .4s ease;
+}
+
+.servicio:hover > i {
+  transform: scale(1.15);
+}
+
+.numbers .number {
+  transition: transform .3s ease;
+}
+
+.numbers .number:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===== imágenes: tamaño controlado ===== */
+
+img {
+  max-width: 100%;
+}
+
+.servicios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.servicios > img {
+  width: 450px;
+}
+
+
+/* ===== RESPONSIVE (tablet y celular) ===== */
+
+/* tablet */
+@media (max-width: 900px) {
+
+  .contenido-header {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .texto-header {
+    margin: 0 0 30px 0;
+  }
+
+  .titulo {
+    font-size: 38px;
+  }
+
+  .contenedor-servicio {
+    margin: 40px 0;
+  }
+
+  .servicio {
+    width: 45%;
+    padding: 40px 25px;
+  }
+
+  .pregunta {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pregunta > img {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 30px;
+  }
+
+  .texto-pregunta {
+    margin: 0;
+  }
+
+  .content-resultados {
+    flex-direction: column;
+  }
+
+  .numbers {
+    width: 100%;
+  }
+
+  .results-text {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .servicios {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .servicios > img {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+  }
+
+  .partfooter {
+    width: 45%;
+    margin-bottom: 30px;
+  }
+}
+
+/* celular */
+@media (max-width: 600px) {
+
+  .nav {
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* los links se esconden y salen cuando le dan al hamburger */
+  .enlaces-header {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 8px 10px rgba(139,92,246,.2);
+  }
+
+  .enlaces-header.activo {
+    display: flex;
+  }
+
+  .nav .enlaces-header a {
+    margin: 0;
+    padding: 15px 0;
+  }
+
+  .titulo {
+    font-size: 30px;
+  }
+
+  .contenedor1 {
+    padding: 40px 0;
+  }
+
+  .servicio {
+    width: 100%;
+  }
+
+  .numbers .number {
+    width: 100%;
+    padding: 30px 25px;
+  }
+
+  .numbers .number h4 {
+    font-size: 38px;
+  }
+
+  .results-text h4 {
+    font-size: 30px;
+  }
+
+  .box-skills h4 {
+    width: 100%;
+  }
+
+  .partfooter {
+    width: 100%;
+  }
+}
