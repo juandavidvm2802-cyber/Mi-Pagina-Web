@@ -42,18 +42,32 @@ tarjetas.forEach(function (tarjeta) {
 
 
 // Menu hamburger para celular
+// (se crea desde aqui, asi que no hay que ponerlo en el HTML)
 
-const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('.nav') || document.querySelector('nav');
 const enlaces = document.querySelector('.enlaces-header');
 
-if (hamburger && enlaces) {
+if (nav && enlaces) {
+
+  // por si ya habia uno viejo en el HTML lo quitamos
+  const viejo = document.querySelector('.hamburger');
+  if (viejo) viejo.remove();
+
+  const hamburger = document.createElement('button');
+  hamburger.className = 'hamburger';
+  hamburger.setAttribute('aria-label', 'Abrir menú');
+  hamburger.innerHTML = '<span></span><span></span><span></span>';
+  nav.appendChild(hamburger);
+
   hamburger.addEventListener('click', function () {
+    hamburger.classList.toggle('activo');
     enlaces.classList.toggle('activo');
   });
 
   // cuando le dan a un link el menu se cierra
   enlaces.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
+      hamburger.classList.remove('activo');
       enlaces.classList.remove('activo');
     });
   });
